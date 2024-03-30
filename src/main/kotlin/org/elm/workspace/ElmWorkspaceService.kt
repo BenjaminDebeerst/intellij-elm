@@ -271,7 +271,7 @@ class ElmWorkspaceService(
         )
 
         val success =
-            if (dto.has("lamdera/core"))
+            if (!dto.has("lamdera/core"))
                 elmCLI.make(intellijProject, workDir = dir.toPath(), null, listOf(tmpEntryPoint)) // path = tempMain.toPath()
             else {
                 val lamderaCLI = settings.toolchain.lamderaCLI
